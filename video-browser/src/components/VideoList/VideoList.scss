@@ -1,0 +1,12 @@
+.video-list {
+  li {
+    display: flex;
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}
+
