@@ -1,0 +1,28 @@
+<template>
+  <div class="video-detail" v-if="video">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" :src="videoUrl" frameborder="0"></iframe>
+    </div>
+    <div class="details">
+      <h4>{{ video.snippet.title }}</h4>
+      <p>{{ video.snippet.description }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'VideoDetail',
+  props: {
+    video: Object
+  },
+  computed: {
+    videoUrl () {
+      const { videoId } = this.video.id
+      return `http://www.youtube.com/embed/${videoId}`
+    }
+  }
+}
+</script>
+
+<style lang="scss" src="./VideoDetail.scss"></style>
